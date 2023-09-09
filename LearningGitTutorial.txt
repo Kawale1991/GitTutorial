@@ -1,0 +1,163 @@
+**************************************************************************************************************************************
+															Git tutorial
+**************************************************************************************************************************************
+
+pwd => to check which directory you are.
+ls => it will show list of files into the directory.
+git config --global user.name "Shyam"
+git config --global user.email "shyamkawale04@gmail.com"
+git config --list
+git config user.name
+git config user.email
+
+git status => to check whether git repository or not 
+git init => after creating new folder or repository need to add this command in local directory.
+git -a / git add ./ git add --a => adding all new files to staging area but commits still not done
+git commit -am / git commit -m "comment if any" => new staging files added into commit area with comment
+git log => to check all history
+
+suppose i have change something in file and again whenever i am checking it will come to aggain that modified file into stage area.
+that time suppose multile files are there but i want to commit only 1 file then i need to write below command.
+
+git add . => to track again that file
+git add test1.txt => for specific file add to track area
+
+Use this command to specific file commmit 
+git commit -m test1.txt test2.txt
+
+to delete git repository use below command - dangerous command
+rm - rf .git
+
+
+use this command to copy code from git website to your parh
+git clone https://github.com/Kawale1991/IKF_Assignment.git
+
+again add git to stage area need to add below command
+git init
+
+again running below command you will know what are all the files are present to staging area.
+git status
+
+need to add stagging area write below command
+git add --a => all the files now come to staging area
+
+
+---------New things
+
+Untracked - Initially its untracked when we create new repository add this command git init but not traked
+Unmodified - when we run command git add --a it will goes to unmodified mode and come to stage area
+modified - when we modified some file into stage area it will goes to modeifed mode and stage also modified file.
+staged - modified file using this command git add --a it will goes to again staged area.
+
+-------------
+.gitignore => ignore files in git
+------------------------
+
+touch testing.txt => create new file into git directory where your project is present
+touch .gitignore => this file ignore basically what files you dont want track
+inside .gitignore file you can add => error.log (this is a file name)
+after adding above command it will not tracked your newly added files
+if you want ignore all log file extentesion then you can write => *.log (it will ignore all log files)
+
+Create a git repository and add below commands
+git remote
+
+git remote add development https://github.com/Kawale1991/GitTutorial.git
+
+again run below command, you will see your remote directory will created as development
+shyam@SHYAM MINGW64 /d/Git Tutorial (master)
+$ git remote
+development
+
+
+this below command will show push and fetch
+$ git remote -v
+development     https://github.com/Kawale1991/GitTutorial.git (fetch)
+development     https://github.com/Kawale1991/GitTutorial.git (push)
+
+this below command used for push your files to git repository.
+$ git checkout development
+$ git remote add development https://github.com/Kawale1991/GitTutorial.git
+git branch
+$ git push origin development
+
+create a new branch using below command
+git branch shyamdevelopment
+
+switch to that branch using below command
+git checkout shyamdevelopment
+
+create a new branch use below command
+git checkout -b devlop
+
+create a new repository using this below command
+git remote add origin https://github.com/username/Hello-World.git
+
+give alias to git status command, you need to use below command
+git config --global alias.st status
+git config --global alias.cm commit
+
+how to use alias above 
+git st
+git cm
+
+restore the file to stage to unstage
+git restore --staged abc.txt
+
+how to discard modfied file, use below commnad (danger command all changes destroyed)
+git restore abc.txt
+
+
+delete a branch using this below command, note - devlop is the branch name.
+git branch -D devlop
+
+skip the stagging area, need to use below command
+git commit -a -m "this is skipping stagging area"
+
+-------------------------
+Actual Creiteria
+-------------------------
+
+1) git branch => to check how many branch are there.
+
+2) git checkout development => It means First, switch to the 'development' branch
+
+3) git pull origin development => The git pull command is used to fetch changes from a remote repository and integrate them into your current branch.
+
+4) git branch feature-VSO-3116 => create a new branch like this
+
+5) git checkout feature-VSO-3116 => to swith to new branch
+
+6) git branch => again run this command
+
+7) git commit -am "Add dropdownbox to a master page with this VSO" => after coding done commit with descriptive comment.
+
+8) git push origin feature-VSO-3116 => once the work is completed and you want to push it to remote then use this command.
+
+
+-------------------------
+git merge
+
+shyam@SHYAM MINGW64 /d/Git Tutorial (master)
+$ git merge MyGitProject
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
